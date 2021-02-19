@@ -1,0 +1,348 @@
+<table class="table-white">
+	<thead>
+		<tr>
+			<th>Operation</th>
+			<th>Description</th>
+		</tr>
+	</thead>
+	<tbody>
+<tr>
+	<td>capitalize()</td><td>It capitalizes the first character of the String.</td>
+</tr>
+<tr>
+	<td>count(string,begin,end)</td><td>Counts number of times substring occurs in a String between begin and end index.</td>
+</tr>
+<tr>
+	<td>endswith(suffix ,begin=0,end=n)</td><td>Returns a Boolean value if the string terminates with given suffix between begin and end.</td>
+</tr>
+<tr>
+<td>find(substring	,beginIndex, endIndex)</td><td>It returns the index value of the string where substring is found between begin index and end index.</td>
+</tr>
+
+<tr>
+	<td>index(subsring,	beginIndex, endIndex)</td><td>Same as find() except it raises an exception if string is not found.</td>
+</tr>
+<tr>
+	<td>isalnum()</td><td>It returns True if characters in the string are alphanumeric i.e., alphabets or numbers and there is at least 1 character. Otherwise it returns False.</td>
+</tr>
+<tr>
+	<td>isalpha()</td><td>It returns True when all the characters are alphabets and there is at least one character, otherwise False.</td>
+</tr>
+<tr>
+	<td>isdigit()</td><td>It returns True if all the characters are digit and there is at least one character, otherwise False.</td>
+</tr>
+<tr>
+	<td>islower()</td><td>It returns True if the characters of a string are in lower case, otherwise False.</td>
+</tr>
+<tr>
+	<td>isupper()</td><td>It returns False if characters of a string are in Upper case, otherwise False.</td>
+</tr>
+<tr>
+	<td>isspace()</td><td>It returns True if the characters of a string are whitespace, otherwise false.</td>
+</tr>
+<tr>
+	<td>len(string)	len() </td><td>returns the length of a string.</td>
+</tr>
+<tr>
+	<td>lower()</td><td>Converts all the characters of a string to Lower case.</td>
+</tr>
+<tr>
+	<td>upper()	</td><td>Converts all the characters of a string to Upper Case.</td>
+</tr>
+<tr>
+	<td>startswith(str ,begin=0,end=n)</td><td>Returns a Boolean value if the string starts with given str between begin and end.</td>
+</tr>
+<tr>
+	<td>swapcase()</td><td>Inverts case of all characters in a string.</td>
+</tr>
+<tr>
+	<td>lstrip()</td><td>Remove all leading whitespace of a string. It can also be used to remove particular character from leading.</td>
+</tr>
+<tr>
+	<td>rstrip()</td><td>Remove all trailing whitespace of a string. It can also be used to remove particular character from trailing.</td>
+</tr>
+
+</tbody>
+</table>
+
+<h2>Examples:</h2>
+
+<h3>1)	capitalize()</h3>
+
+<p>1. >>> 'abc'.capitalize()</p>
+
+<h3>Output:</h3>
+
+<p>'Abc'</p>
+
+<h3>2)	count(string)</h3>
+
+<p>1.	msg = "welcome to sssit";</p>
+<p>2.	substr1 = "o";</p>
+<p>3.	print msg.count(substr1, 4, 16)</p>
+<p>4.	substr2 = "t";</p>
+<p>5.	print msg.count(substr2)</p>
+
+<h3>Output:</h3>
+<p>>>> </p>
+<p>2</p>
+<p>2</p>
+<p>>>></p>
+
+
+
+<h3>3)	endswith(string)</h3>
+
+<p>1.	string1="Welcome to SSSIT";</p>
+<p>2.	substring1="SSSIT";</p>
+<p>3.	substring2="to";</p>
+<p>4.	substring3="of";</p>
+<p>5.	print string1.endswith(substring1);</p>
+<p>6.	print string1.endswith(substring2,2,16);</p>
+<p>7.	print string1.endswith(substring3,2,19);</p>
+<p>8.	print string1.endswith(substring3);</p>
+
+<h3>Output:</h3>
+<p>>>></p>
+<p>True </p>
+<p>False </p>
+<p>False </p>
+<p>False</p>
+<p>>>></p>
+
+
+
+<h3>4)	find(string)</h3>
+
+<p>1.	str="Welcome to SSSIT";</p>
+<p>2.	substr1="come";</p>
+<p>3.	substr2="to";</p>
+<p>4.	print str.find(substr1);</p>
+<p>5.	print str.find(substr2);</p>
+<p>6.	print str.find(substr1,3,10);</p>
+<p>7.	print str.find(substr2,19);</p>
+ 
+<h3>Output:</h3>
+<p>>>> </p>
+<p>3</p>
+<p>8</p>
+<p>3</p>
+<p>-1</p>
+<p>>>></p>
+
+
+
+<h3>5)	index(string)</h3>
+
+<p>1.	str="Welcome to world of SSSIT";</p>
+<p>2.	substr1="come";</p>
+<p>3.	substr2="of";</p>
+<p>4.	print str.index(substr1);</p>
+<p>5.	print str.index(substr2);</p>
+<p>6.	print str.index(substr1,3,10);</p>
+<p>7.	print str.index(substr2,19);</p>
+
+<h3>Output:</h3>
+<p>>>> </p>
+<p>3</p>
+<p>17</p>
+<p>3</p>
+<p>Traceback (most recent call last):</p>
+<p>File "C:/Python27/fin.py", line 7, in print str.index(substr2,19);</p>
+<p>ValueError: substring not found</p>
+<p>>>></p>
+
+
+
+
+
+
+
+
+<h3>6)	isalnum()</h3>
+
+<p>1.	str="Welcome to sssit";</p>
+<p>2.	print str.isalnum();</p>
+<p>3.	str1="Python47";</p>
+<p>4.	print str1.isalnum();</p>
+ 
+<h3>Output:</h3>
+<p>>>></p>
+<p>False </p>
+<p>True</p>
+<p>>>></p>
+
+
+<h3>7)	isalpha()</h3>
+
+<p>1.	string1="HelloPython";	# Even space is not allowed</p>
+<p>2.	print string1.isalpha();</p>
+<p>3.	string2="This is Python2.7.4"</p>
+<p>4.	print string2.isalpha();</p>
+
+<h3>Output:</h3>
+<p>>>></p>
+<p>True </p>
+<p>False</p>
+<p>>>></p>
+
+
+
+<h3>8)	isdigit()</h3>
+
+<p>1.	string1="HelloPython";</p>
+<p>2.	print string1.isdigit(); </p>
+<p>3. string2="98564738"</p>
+<p>4. print string2.isdigit();</p>
+
+<h3>Output:</h3>
+<p>>>></p>
+<p>False </p>
+<p>True</p>
+<p>>>></p>
+
+
+
+
+
+
+<h3>9)	islower()</h3>
+
+<p>1.	string1="Hello Python";</p>
+<p>2.	print string1.islower();</p>
+<p>3.	string2="welcome to "</p>
+<p>4.	print string2.islower();</p>
+ 
+<h3>Output:</h3>
+<p>>>></p>
+<p>False </p>
+<p>True</p>
+<p>>>></p>
+
+
+<h3>10)	isupper()</h3>
+
+<p>1.	string1="Hello Python";</p>
+<p>2.	print string1.isupper();</p>
+<p>3.	string2="WELCOME TO"</p>
+<p>4.	print string2.isupper();</p>
+
+<h3>Output:</h3>
+<p>>>></p>
+<p>False </p>
+<p>True</p>
+<p>>>></p>
+
+
+<h3>11)	isspace()</h3>
+
+<p>1.	string1="	";</p>
+<p>2.	print string1.isspace();</p>
+<p>3.	string2="WELCOME TO WORLD OF PYT"</p>
+<p>4.	print string2.isspace();</p>
+
+<h3>Output:</h3>
+<p>>>></p>
+<p>True </p>
+<p>False</p>
+<p>>>></p>
+
+
+<h3>12)	len(string)</h3>
+
+<p>1.	string1="	";</p>
+<p>2.	print len(string1);</p>
+<p>3.	string2="WELCOME TO SSSIT"</p>
+<p>4.	print len(string2);</p>
+ 
+<h3>Output:</h3>
+<p>>>> </p>
+<p>4</p>
+<p>16</p>
+<p>>>></p>
+
+
+<h3>13)	lower()</h3>
+
+<p>1.	string1="Hello Python";</p>
+<p>2.	print string1.lower();</p>
+<p>3.	string2="WELCOME TO SSSIT"</p>
+<p>4.	print string2.lower();</p>
+
+<h3>Output:</h3>
+<p>>>></p>
+<p>hello python </p>
+<p>welcome to sssit</p>
+<p>>>></p>
+
+
+<h3>14)	upper()</h3>
+
+<p>1.	string1="Hello Python";</p>
+<p>2.	print string1.upper();</p>
+<p>3.	string2="welcome to SSSIT"</p>
+<p>4.	print string2.upper();</p>
+
+<h3>Output:</h3>
+<p>>>></p>
+<p>HELLO PYTHON </p>
+<p>WELCOME TO SSSIT</p>
+<p>>>></p>
+
+
+<h3>15)	startswith(string)</h3>
+
+<p>1.	string1="Hello Python";</p>
+<p>2.	print string1.startswith('Hello');</p>
+<p>3.	string2="welcome to SSSIT"</p>
+<p>4.	print string2.startswith('come',3,7);</p>
+<h3>Output:</h3>
+<p>>>></p>
+<p>True </p>
+<p>True</p>
+<p>>>></p>
+
+ 
+ 
+<h3>16)	swapcase()</h3>
+
+<p>1.	string1="Hello Python";</p>
+<p>2.	print string1.swapcase();</p>
+<p>3.	string2="welcome to SSSIT"</p>
+<p>4.	print string2.swapcase();</p>
+
+<h3>Output:</h3>
+<p>>>></p>
+<p>hELLO pYTHON</p>
+<p>WELCOME TO sssit</p>
+<p>>>></p>
+
+
+<h3>17)	lstrip()</h3>
+
+<p>1.	string1="Hello Python";</p>
+<p>2.	print string1.lstrip();</p>
+<p>3.	string2="@@@@@@@@welcome to SSSIT"</p>
+<p>4.	print string2.lstrip('@');</p>
+
+<h3>Output:</h3>
+<p>>>></p>
+<p>Hello Python</p>
+<p>welcome to world to SSSIT</p>
+<p>>>></p>
+
+
+
+
+<h3>18)	rstrip()</h3>
+
+<p>1.	string1="	Hello Python	";</p>
+<p>2.	print string1.rstrip();</p>
+<p>3.	string2="@welcome to SSSIT!!!"</p>
+<p>4.	print string2.rstrip('!');</p>
+
+<h3>Output:</h3>
+<p>>>></p>
+<p>			Hello Python47 </p>
+<p>@welcome to SSSIT</p>
+

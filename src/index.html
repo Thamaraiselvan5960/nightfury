@@ -6,8 +6,124 @@
   <base href="/">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <link rel="stylesheet" type="text/css" href="./assets/prismjs/prism.css">
+  <script type="text/javascript" src="./assets/prismjs/prism.js"></script>
 </head>
 <body>
   <app-root></app-root>
+  <script type="text/javascript">
+  
+	  	function hamburger_1(status){
+	  		var side_nav = document.getElementById('side_nav');
+	  		if(status == 'show'){
+	  			document.body.style.overflow = 'hidden';
+	  			side_nav.style.display = 'block';
+	  			console.log('show');
+	  		}
+	  		else{
+	  			document.body.style.overflow = 'auto';
+	  			side_nav.style.display = 'none';
+	  			console.log('hide');
+	  		}
+	  	}
+	  	
+
+	  	
+	  	function scrolltop(){
+	  		document.body.scrollTop = 0;
+	  		document.documentElement.scrollTop = 0;
+	  	}
+	  	function collapsible(){
+	  		console.log('hai')
+	  		var nav = document.getElementsByClassName('left-menu')[0];
+
+	  		var a_tags = nav.querySelectorAll('.collapsible');
+
+	  		for (i = 0; i < a_tags.length; i++) {
+			  a_tags[i].addEventListener("click", function() {
+			    this.classList.toggle("active");
+			    // console.log('scrollheight', nav.scrollHeight);
+			    var content = this.nextElementSibling;
+			    if (content.style.maxHeight){
+			    	nav.style.maxHeight = 100+'vh';
+			        content.style.maxHeight = null;
+			    } else {
+			      content.style.maxHeight = content.scrollHeight + "px";
+			      nav.style.maxHeight = (content.scrollHeight + nav.scrollHeight) + "px"
+			    }
+			  });
+			}
+		   }
+		    function toptobottom(){
+		  		var toptobottom_menu = document.getElementsByClassName('left-menu')[0];
+		  		var close = toptobottom_menu.querySelectorAll('a');
+		  		close.forEach(function(item){
+		  			item.addEventListener("click",function(){
+		  				var child = toptobottom_menu.querySelectorAll('.collapsible');
+		  				// console.log('child', child)
+		  				child.forEach(function(item){
+		  					item.classList.remove('active');
+		  					var content = item.nextElementSibling;
+		  					// console.log('content',content)
+						    if (content.style.maxHeight){
+						        content.style.maxHeight = null;
+						    }	
+			  			});
+
+			  			toptobottom_menu.style.maxHeight = null;
+		  			})
+		  		})
+		  		setTimeout(function(){},1000);
+		  		var height = toptobottom_menu.scrollHeight;
+		  		if(toptobottom_menu.style.maxHeight!= 0){
+		  			toptobottom_menu.style.maxHeight = null;
+		  			// toptobottom_menu.style.display = 'block';
+		  		}
+		  		else{
+		  			toptobottom_menu.style.maxHeight =height+ 'px';
+		  			// toptobottom_menu.style.display = 'none';	
+		  		}
+	  		}
+
+	  	window.onload = function(){
+	  		const footerlink = document.querySelectorAll('footer a');
+		  	if(footerlink){
+		  		console.log(footerlink.length)
+			  	footerlink.forEach(item => {
+			  		item.addEventListener('click',function(){
+			  		scrolltop();
+			  		})
+			  	})
+			  }
+			  else{
+			  	alert('nope');
+			  }
+		   collapsible();
+		  
+			// // collapsible menu
+			// var coll = document.getElementsByClassName("collapsible");
+			// var i;
+
+			// for (i = 0; i < coll.length; i++) {
+			//   coll[i].addEventListener("click", function() {
+			//     this.classList.toggle("active");
+			//     var content = this.nextElementSibling;
+			//     if (content.style.maxHeight){
+			//       content.style.maxHeight = null;
+			//     } else {
+			//       content.style.maxHeight = content.scrollHeight + "px";
+			//     }
+			//   });
+			// }
+	  	}
+
+	  	document.addEventListener("click",function(){
+	  		Prism.highlightAll();
+	  	})
+	  	
+
+	  	
+	
+  </script>
 </body>
 </html>

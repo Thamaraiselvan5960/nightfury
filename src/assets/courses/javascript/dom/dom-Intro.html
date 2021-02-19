@@ -1,0 +1,152 @@
+<h1>Concept of DOM</h1>
+<p>Access and modify all elements in HTML Document or HTML page.</p>
+<h1>level of Access</h1>
+<li>CSS Styles</li>
+<li>Tag Attributes</li>
+<li>HTML elements</li>
+<li>Events</li>
+
+<h1>Agenda for this topic</h1>
+<p>How to Find HTML Elements.</p>
+<p>How to change a HTML Elements from one state to another.</p>
+<p>How to  add new HTML Elements.</p>
+<p>How to delete a HTML Element.</p>
+<p>How to perform an event like onclick,mouseover etc...,</p>
+
+<h1>How to Find HTML Elements</h1>
+<p>Following selectors will help to find the HTML elemnts.</p>
+<li>using ID</li>
+<li>using classname</li>
+<li>using Tagname</li>
+<li>Queryselector</li>
+<div class="t-container">
+	<table class="table-white">
+	<thead>
+		<tr>
+			<th>Property</th>
+			<th>Description</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+			<td>element = document.getElementById('id_name');</td>
+			<td>using ID</td>
+		</tr>
+		<tr>
+			<td>element = document.getElementsByClassName('class_name');</td>
+			<td>Using Class name.It will return all elements which have same class name in the document/HTML page.</td>
+		</tr>
+		<tr>
+			<td>element = document.getElementsByTagName('tag_name');</td>
+			<td>Using Tagname</td>
+		</tr>
+		<tr>
+			<td>element = document.querySelector('selector_name');<br>
+				element = document.querySelectorAll('selector_name');</td>
+			<td>Using QuerySelector</td>
+		</tr>
+	</tbody>
+</table>
+</div>
+
+
+
+
+<h1>How to change a HTML Elements</h1>
+<p>After finding elements you can change the content, attributes, Css styles and can set Attribute to the perticular element.</p>
+
+<div class="t-container">
+	<table class="table-white">
+	<thead>
+		<tr>
+			<th>Property</th>
+			<th>Description</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+			<td>element.innerHTML = new HTML content;</td>
+			<td>Change innerHTML</td>
+		</tr>
+		<tr>
+			<td>element.attribute = new value;</td>
+			<td>Change Attribute value</td>
+		</tr>
+		<tr>
+			<td>element.style.property = new style;</td>
+			<td>Change CSS Style</td>
+		</tr>
+		<tr>
+			<td>element.setAttribute(attribute,value);</td>
+			<td>Set New Attribute to an Element</td>
+		</tr>
+	</tbody>
+</table>
+</div>
+
+
+<h1>Add/Delete HTML Element</h1>
+<div class="t-container">
+	<table class="table-white">
+	<thead>
+		<tr>
+			<th>Property</th>
+			<th>Description</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+			<td>document.createElement(element);</td>
+			<td>create an HTML Element</td>
+		</tr>
+		<tr>
+			<td>document.removeChild(element);</td>
+			<td>remove an HTML element</td>
+		</tr>
+		<tr>
+			<td>document.appendElement(element);</td>
+			<td>add an HTML Element</td>
+		</tr>
+		<tr>
+			<td>document.replaceChild(new, old);</td>
+			<td>Replace an HTML Element</td>
+		</tr>
+	</tbody>
+</table>
+</div>
+
+
+<h1>Event Handler</h1>
+<p>Frequently user events</p>
+<div class="t-container">
+	<table class="table-white">
+	<thead>
+		<tr>
+			<th>Event names</th>
+			<th>Description</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+			<td>Onload</td>
+			<td>trigger an event when the particulat element is loaded in HTML page.</td>
+		</tr>
+		<tr>
+			<td>Onclick</td>
+			<td>trigger an event by clicking an element in HTML page.</td>
+		</tr>
+		<tr>
+			<td>Onkeyup</td>
+			<td>trigger an event by when a key pressed.event triggered when the key is released.</td>
+		</tr>
+		<tr>
+			<td>Onmouseover</td>
+			<td>Trigger an event when mouse enter to the particular element in HTML page</td>
+		</tr>
+		<tr>
+			<td>Onfocus</td>
+			<td> trigger an event when particular element get focused in HTML page.</td>
+		</tr>
+	</tbody>
+</table>
+</div>

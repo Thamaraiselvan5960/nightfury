@@ -8,3 +8,13 @@ import { Component } from '@angular/core';
 export class AppComponent {
   title = 'nightfury';
 }
+
+@Component({
+  selector: 'app-nav',
+  templateUrl: './nav.html',
+  styleUrls: ['./app.component.css']
+})
+export class AppnavComponent {
+
+}
+

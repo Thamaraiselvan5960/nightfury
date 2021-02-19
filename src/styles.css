@@ -1,1 +1,387 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
 /* You can add global styles to this file, and also import other style files */
+*,
+*::before,
+*::after{
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+:root{
+	/*background*/
+	--navbar-bg:rgba(0,0,0,1);
+	--body-bg:rgba(0,0,0,1);
+	--card-success:#17b517;
+	--card-info:#8763c5;
+	--btn1-bg:rgba(0,0,0,0.4);
+	--footer-bg:#5d5d5d;
+	/*text*/
+	--title-clr:#e3e3e3;
+	--text-clr:#e3e3e3;
+	--link-clr:#4db2ff;
+	--accent-clr:rgba(0,0,0,0.3);
+	--link-hover:#e3e3e3;
+	--visited-link:#8980e0;
+	/*font-family*/
+	--title-ff:;
+	--text-ff:;
+	--highlight-ff:;
+
+}
+html{
+	  position: relative;
+}
+html,
+body{
+	font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+    font-size: 16px;
+    color: var(--text-clr);
+    background-color: var(--body-bg);
+    box-sizing: border-box;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    /*overflow-x: hidden;*/
+}
+h1,h2,h3,h4,h5,h6{
+	margin-bottom: 0.6rem;
+	font-family: 'Roboto Slab', serif;
+}
+p{
+	margin-bottom: 0.8rem;
+	color: var(--text-clr);
+	text-align: justify;
+	justify-content: space-evenly;
+	font-family: 'Roboto', sans-serif;
+}
+a{
+	text-decoration: none;
+	color: var(--link-clr);
+	cursor: pointer;
+}
+a:hover{
+	color: var(--link-hover);
+}
+button{
+
+}
+img{
+	display: block;
+	width: 100%;
+}
+
+/*layout design*/
+.title-bar{
+	background-color: var(--body-bg);
+	width: calc(100vw - 7px );
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	padding: 0.4rem 0.8rem;
+	border-bottom: 1px solid rgba(255,255,255,0.7);
+	/*position: fixed;
+	top: 0;*/
+	position: relative;
+	z-index: 10;
+}
+nav{
+	border-bottom: 1px solid rgba(255,255,255,0.7);
+	background-color: var(--navbar-bg);
+	width: calc(100vw - 7px);
+}
+nav ul{
+	list-style: none;
+	display: flex;
+}
+nav ul li a{
+	padding: 0.7rem 1rem;
+	display: block;
+}
+.hamburger, .three-dots{
+	display: none;
+	width: 40px;
+	height: 35px;
+	align-items: center;
+	justify-content: space-between;
+	flex-direction: column;
+	border:2px solid blue;
+	border-radius: 0.6rem;
+	padding: 0.5rem 0.5rem;
+	cursor: pointer;
+}
+.hamburger .line{
+	width: 80%;
+	height: 8%;
+	background-color: #fff;
+}
+.three-dots{
+	border:none;
+}
+.three-dots .dots{
+	width: 20%;
+	height: 20%;
+	background-color: #fff;
+	border-radius: 50%;
+}
+.parent{
+	display: none;
+	position: relative;
+	/*left:-100vw;*/
+	width: 100vh;
+	width: 100vw;
+	animation: show 0.8s ease;
+}
+@keyframes show{
+	0%{
+		left: -100vw;
+	}
+	
+	100%{
+		left: 0vw;
+	}
+}
+
+.close{
+	position: absolute;
+	right: 25px;
+	z-index: 9999;
+	color:red;
+	font-size: 2.7rem;
+	cursor: pointer;
+}
+
+.side-nav{
+	display: block;
+	z-index: 9998;
+	position: absolute;
+	width: 100vw;
+	height: 500vh;
+	left:  0;
+	top: 0;
+	background-color: rgba(0,0,0,1);
+}
+
+.main-container{
+    min-height: 100vh;
+    display: flex;
+    flex-wrap: wrap;
+}
+.left-menu{
+	width: 15%;
+	max-height: 100vh;
+	position: sticky;
+	position: -webkit-sticky;
+	top: 0;
+	border-right: 1px solid rgba(255,255,255,0.7);
+	overflow: hidden;
+	/*resize: horizontal;
+	cursor: e-resize;*/
+}
+
+.left-menu > *{
+	display: block;
+}
+.left-menu p{
+	padding: 0.8rem ;
+}
+
+.content{
+	width: 85%;
+	min-height: 100vh;
+	padding: 1.5rem;
+}
+.right-menu{
+	display: none;
+	width: 0%;
+	min-height: 100vh;
+	/*background-color: blue;*/
+	padding: 0.6rem;
+	border-left: 1px solid rgba(255,255,255,0.7);
+}
+.t-container{
+	width: 100%;
+	overflow-x: auto;
+}
+.table-white{
+	border-spacing: 0;
+	border-collapse: collapse;
+	max-width: 100%;
+}
+
+.table-white th, .table-white td{
+	border:1px solid #dadada;
+}
+.table-white thead,.table-white tr:nth-child(even){
+	background-color: #4e4e4e;
+}
+.table-white th, .table-white td{
+	padding: 0.5rem;
+}
+.table-white tr{
+	transition: all 0.6s linear;
+}
+.table-white tr:hover{
+	/*box-shadow:inset 0 0 22px #ff9900;*/
+	/*transform: translateY(-5px);*/
+}
+.table-white tr td:first-child{
+	white-space: nowrap;
+}
+.m-auto{
+	margin: 0 auto;
+}
+
+footer{
+	background-color: var(--footer-bg);
+	width: calc(100vw - 7px);
+	display: flex;
+	justify-content: space-around;
+	padding: 1.2rem 1rem;
+	min-height: 250px;
+}
+footer a, footer h1{
+	color: #fff;
+}
+footer > div {
+	display: flex;
+	flex-direction: column;
+}
+::-webkit-scrollbar{
+	visibility:  none;
+	width: 7px;
+}
+::-webkit-scrollbar-track{
+	background-color: #a2a0a0;
+}
+::-webkit-scrollbar-thumb{
+	background-color: red;
+	border-radius: 7%;
+}
+::-webkit-scrollbar-thumb:hover{
+	background-color: orange;
+	border-radius: 7%;
+}
+
+
+/*custom style*/
+.title{
+	text-transform: uppercase;
+	color: var(--title-clr);
+	background-image: linear-gradient(to right,red,orange);
+
+	background-clip: text;
+	-webkit-background-clip: text;
+	-moz-background-clip: text;
+	-ms-background-clip: text;
+	-o-background-clip: text;
+
+	text-fill-color:transparent;
+	-webkit-text-fill-color: transparent;
+	-moz-text-fill-color: transparent;
+	-ms-text-fill-color: transparent;
+	-o-text-fill-color: transparent;
+
+	-webkit-font-smoothing:antialiased;
+}
+/* Style the button that is used to open and close the collapsible content */
+.collapsible {
+  cursor: pointer;
+  width: 100%;
+  text-align: left;
+  outline: none;
+  font-size: 15px;
+  margin-bottom: 0;
+  color: var(--link-clr);
+}
+
+/* Add a background color to the button if it is clicked on (add the .active class with JS), and when you move the mouse over it (hover) */
+.active, .collapsible:hover {
+  background-color: #5a5a5a;
+}
+
+/* Style the collapsible content. Note: hidden by default */
+.c-content {
+  /*padding: 0 18px;*/
+  background-color: #2d2d2d;
+  max-height: 0;
+  overflow: hidden;
+  width: 100%;
+  transition: max-height 0.2s ease-out;
+}
+.c-content > *{
+	display: block;
+	padding: 0.8rem 0.8rem;
+}
+.collapsible:after {
+  content: '\02795'; /* Unicode character for "plus" sign (+) */
+  font-size: 13px;
+  color: white;
+  float: right;
+  margin-left: 5px;
+}
+.active:after {
+  content: "\2796"; /* Unicode character for "minus" sign (-) */
+}
+
+div > a{
+	transition: all 0.6s linear;
+	padding: 0.8rem
+}
+div > a:hover{
+	box-shadow: 0 0 4px rgba(255,255,255,0.3);
+	transform: scale(1.05,1.05);
+}
+
+@media screen  and (max-width: 720px){
+	h1{
+		font-size: 1.4rem;
+	}
+	/*layout*/
+	.large-screen{
+		display: none;
+	}
+	.small-screen nav{
+		width: 100vw;
+	}
+	.title-bar{
+		justify-content:space-between;
+	}
+	.hamburger, .three-dots{
+		display: flex;
+	}
+	.main-container{
+		flex-direction: column;
+		position: relative;
+	}
+	.side-nav-container nav ul{
+		flex-direction: column;
+	}
+	.left-menu{
+		display: block;
+		width: 100%;
+		max-height: 0px;
+		overflow: hidden;
+		background-color: #272822;
+		border:none;
+		position: relative;
+		transition: max-height 0.2s ease-out;
+		z-index: 1;
+	}
+	.content{
+		width: 100%;
+		min-height: 30vh;
+	}
+	.right-menu{
+		width: 100%;
+		border:none;
+		display: flex;
+		justify-content: flex-start;
+		align-items: center;
+		flex-direction: column;
+	}
+	
+	body:hover ::-webkit-scrollbar {
+		visibility: visible;
+	}
+
+}

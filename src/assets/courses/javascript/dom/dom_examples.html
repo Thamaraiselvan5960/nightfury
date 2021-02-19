@@ -1,0 +1,29 @@
+<h1>Access Elements in HTML Document</h1>
+<pre><code class="language-html">
+	&lt;!DOCTYPE html>
+	&lt;html>
+	&lt;head>
+		&lt;title>JS Tutorials&lt;/title>
+	&lt;/head>
+	&lt;body>
+		&lt;p id="text">Hello World...!&lt;/p>
+
+	&lt;script type="text/javascript">
+		//accessing an element
+		var text_element = Document.getElementById('text'); 
+
+		//styling the element
+		text_element.style.background = 'blue';
+
+		//adding a new attribute or update existing to the element
+		//here attribute name is id
+		text_element.setAttribute(id, text);
+
+		//removing an attribute, here id is the attribute name
+		text_element.removeAttribute(id);
+
+	&lt;/script>
+	&lt;/body>
+	&lt;/html>
+</code></pre>
+

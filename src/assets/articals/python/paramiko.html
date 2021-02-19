@@ -1,0 +1,54 @@
+<h1>How to use paramiko to execute commands on Remote Server?</h1>
+
+<h1>What is Paramiko?</h1>
+<p>It's a python third party module and which is uesd to connect with your remote server to execute commands, transfer files from local to remote or remote to local.</p>
+
+<h1>Cofigurations to use Paramiko:</h1>
+<li>Install paramiko if it's not in your host. </li>
+<li>Make sure that SSHD service is up and running in your remotr server.</li>
+<li>Make sure PasswordAuthentication is yes in SSHD_config file in your remote server.By default PasswordAuthentication is 'No'.</li>
+<li>Get username, password and hostname of your remote server.</li>
+
+<li>ligin to your server manually and change PasswordAuthentication yes to get file by enter below command</li>
+<pre><code class="language-html">sudo vi /etc/ssh/sshd_config</code></pre>
+<div>
+	<img src="assets/images/py-ssh-password-setting.png">
+</div>
+
+<h1>Step1:</h1>
+<p>If you are going to connect to your remote server first time it ask as like below.</p>
+<pre><code class="language-html">ECDSA key fingerprint is **************
+Are you sure you want to continue connecting (yes/no)? 
+</code></pre>
+<p>type 'yes' to continue.</p>
+
+<pre><code class="language-python">import paramiko
+#required data to coonect to your remote server
+user_name = "ubuntu" #here ubuntu is my server name
+password = "******"
+ip = "3.141.1.124"
+port = "22"
+pkey = paramiko.RSAKey.from_private_key_file("C:\\Users\\THAMARAI\\tomtheevilcat1.pem")
+
+#use Either password or pkey option
+
+print ("Connection Process Initiated ...")
+ssh_client = paramiko.SSHClient()
+
+#this step enables fingerprint for first time login
+ssh_client.set_missing_host_key_policy(paramiko.AutoAddPolicy())
+
+#to connect to your server
+ssh_client.connect(hostname = ip, username = user_name, password = password)
+
+print ("Connected to Server...")
+cmd = 'ls -la'
+stdin,stdout,stderr = ssh_client.exec_command(cmd)
+
+print (stdout.read().decode())
+
+
+
+
+</code></pre>
+
